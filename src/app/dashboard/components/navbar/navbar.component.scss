@@ -1,0 +1,33 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.toolbar-first-row {
+  background-color: #0091d5;
+  color: white;
+}
+
+.toolbar-second-row {
+  background-color: #ea6a47;
+  color: white;
+}
+
+.app-title {
+  margin-right: 50px;
+}
+
+.toolbar-button {
+  height: 100%;
+  width: 75px;
+  border: none;
+  background-color: #0091d5;
+  color: #fff;
+}
+
+.is-active{
+  background-color: #ea6a47;
+}
+
+.toolbar-button:hover {
+  background-color: #ea6a47;
+}
