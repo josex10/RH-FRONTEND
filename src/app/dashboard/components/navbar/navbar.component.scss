@@ -3,12 +3,12 @@
 }
 
 .toolbar-first-row {
-  background-color: #0091d5;
+  background-color: #03045e;
   color: white;
 }
 
 .toolbar-second-row {
-  background-color: #ea6a47;
+  background-color: #CAF0F8;
   color: white;
 }
 
@@ -20,14 +20,21 @@
   height: 100%;
   width: 75px;
   border: none;
-  background-color: #0091d5;
+  background-color: #03045e;
   color: #fff;
 }
 
-.is-active{
-  background-color: #ea6a47;
+.is-active {
+  background-color: #CAF0F8;
+  color: #03045e;
 }
 
 .toolbar-button:hover {
-  background-color: #ea6a47;
+  background-color: #CAF0F8;
+  color: #03045e;
+}
+
+img {
+  height: 55px;
+  margin-top: 1.2vh;
 }

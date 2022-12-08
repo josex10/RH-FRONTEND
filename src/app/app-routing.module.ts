@@ -15,16 +15,14 @@ import {
 
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'restaurant', component: RestaurantComponent },
-  { path: 'reports', component: ReportsComponent },
-  { path: 'expenses', component: ExpensesComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'clients', component: ClientsComponent },
-  { path: 'providers', component: ProvidersComponent },
-  { path: 'configuration', component: ConfigurationComponent },
-  { path: 'sales', component: SalesComponent },
-  { path: '', redirectTo: 'restaurant', pathMatch: 'full' }
+  { 
+    path: 'public',
+    loadChildren: () => import('./public/public.module').then( m => m.PublicModule )
+  },
+  {
+    path: '**',
+    redirectTo: 'public'
+  }
 ];
 
 @NgModule({

@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
  */
 import { CoreModule } from './core/core.module';
 import { DashboardModule } from './dashboard/dashboard.module';
-import { UtilModule } from './util/util.module';
 
 /**
  * @description: Import Angular Material Modules
@@ -26,8 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     DashboardModule,
     CoreModule,
-    UtilModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

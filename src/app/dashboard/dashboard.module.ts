@@ -11,6 +11,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 /**
  * @description: Imports from pages
@@ -47,7 +48,7 @@ import { FormLoginComponent, NavbarComponent } from './components';
     ConfigurationComponent,
     SalesComponent,
   ],
-  imports: [CommonModule, MatToolbarModule, MatIconModule, MatMenuModule, AppRoutingModule],
+  imports: [CommonModule, MatToolbarModule, MatIconModule, MatMenuModule, AppRoutingModule, MatSidenavModule],
   exports: [NavbarComponent],
 })
 export class DashboardModule {}

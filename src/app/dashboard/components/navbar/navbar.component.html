@@ -1,83 +1,47 @@
 <p>
   <mat-toolbar>
     <mat-toolbar-row class="toolbar-first-row">
-      <span class="app-title">RHelper</span>
+      <span class="app-title">
+        <img src="../../../../assets/Logo.png" alt="">
+      </span>
 
-      <button
-        mat-button
-        [routerLink]="['/restaurant']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/restaurant']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon> restaurant</mat-icon>
       </button>
 
-      <button
-        mat-button
-        [routerLink]="['/sales']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/sales']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon> local_offer</mat-icon>
       </button>
-
-      <button
-        mat-button
-        [routerLink]="['/expenses']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/expenses']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon> attach_money</mat-icon>
       </button>
-      <button
-        mat-button
-        [routerLink]="['/products']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/products']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon> local_pizza</mat-icon>
       </button>
-      <button
-        mat-button
-        [routerLink]="['/clients']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/clients']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon>person</mat-icon>
       </button>
-      <button
-        mat-button
-        [routerLink]="['/providers']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/providers']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon> local_shipping</mat-icon>
       </button>
-      <button
-        mat-button
-        [routerLink]="['/reports']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/reports']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon> bar_chart</mat-icon>
       </button>
-      <button
-        mat-button
-        [routerLink]="['/configuration']"
-        class="toolbar-button"
-        routerLinkActive="is-active"
-      >
+      <button mat-button [routerLink]="['/configuration']" class="toolbar-button" routerLinkActive="is-active">
         <mat-icon>settings</mat-icon>
       </button>
 
-      <span class="example-spacer"></span>
-      <button
-        mat-icon-button
-        class="example-icon"
-        aria-label="Example icon-button with menu icon"
-      >
+      <span class="example-spacer">
+        hELLO rOLWD
+      </span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
+
+  <mat-drawer-container class="example-container">
+    <mat-drawer mode="side" opened>Drawer content</mat-drawer>
+    <mat-drawer-content>Main content</mat-drawer-content>
+  </mat-drawer-container>
 </p>
