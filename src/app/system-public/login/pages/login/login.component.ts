@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { AnyUserLoginAuth } from 'src/app/shared/interfaces/IAuth';
 import { Router } from '@angular/router';
@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
 
   private anyUserLoginAuth!: AnyUserLoginAuth;
 
-  public loginForm = new  FormGroup({
-    frmCtrlUsername: new FormControl("", [
+  public loginForm = new  UntypedFormGroup({
+    frmCtrlUsername: new UntypedFormControl("", [
       Validators.required,
       Validators.email
     ]),
-    frmCtrlPassword: new FormControl("", [
+    frmCtrlPassword: new UntypedFormControl("", [
       Validators.required,
       Validators.minLength(8)
     ])
