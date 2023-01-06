@@ -1,0 +1,30 @@
+mat-toolbar {
+    background-color: #ffffff;
+    font-size: 2vh;
+}
+
+.rh-navbar-logo {
+    height: 80%;
+    margin-right: 10vw;
+}
+
+.rh-navbar-right-section {
+    flex: 1 1 auto;
+}
+
+.rh-header-options {
+    margin: 0 20px 0 20px;
+}
+
+.hr-navbar-button {
+    text-decoration: none;
+    color: #000000;
+}
+
+.hr-navbar-button:hover {
+    color: #F20103;
+}
+
+.rh-navbar-button-row app-shared-button-raise-extended {
+    margin-right: 8px;
+}

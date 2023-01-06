@@ -1,0 +1,26 @@
+.rh-main-container {
+    background-color: #4E53C7;
+    width: 100vw;
+    height: 92.5vh;
+}
+
+.rh-login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.rh-login-inputs-container {
+    background-color: #ffffff;
+    height: 30%;
+    padding: 7%;
+}
+
+.fmrErrorMessage {
+    width: 100%;
+    padding-top: 20px;
+    font-size: 1.5vh;
+    color: red;
+}

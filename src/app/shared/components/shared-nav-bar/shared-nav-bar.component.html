@@ -1,0 +1,35 @@
+<mat-toolbar>
+    <img src="../../../../assets/Logo.png" alt="Restaurant - Helper" class="rh-navbar-logo">
+
+
+    <span class="rh-navbar-right-section"></span>
+
+    <span class="rh-header-options">
+        <a routerLink="/home" class="hr-navbar-button">
+            Inicio
+        </a>
+    </span>
+    <span class="rh-header-options">
+        <a [routerLink]="['feature']" class="hr-navbar-button">
+            Carácteristicas
+        </a>
+    </span>
+    <span class="rh-header-options">
+        <a [routerLink]="['pricing']" class="hr-navbar-button">
+            Precios
+        </a>
+    </span>
+    <span class="rh-header-options">
+        <a [routerLink]="['contact']" class="hr-navbar-button">
+            Contáctenos
+        </a>
+    </span>
+
+    <div class="rh-navbar-button-row">
+        <app-shared-button-raise-extended button-color="basic" button-icon="login" button-label="Ingresar"
+            (clickResponse)="fnChangeRoute('login')"></app-shared-button-raise-extended>
+        <app-shared-button-raise-extended button-color="warn" button-icon="app_registration" button-label="Registro"
+            (clickResponse)="fnChangeRoute('register')"></app-shared-button-raise-extended>
+    </div>
+
+</mat-toolbar>

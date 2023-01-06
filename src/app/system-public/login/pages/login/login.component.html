@@ -1,0 +1,39 @@
+<div class="rh-main-container">
+    <div class="rh-login-form">
+        <div class="rh-login-inputs-container">
+            <h2>Bienvenido</h2>
+            <form [formGroup]="loginForm">
+                <app-shared-input input-label="Nombre de Usuario" formControlName="frmCtrlUsername"
+                    name="frmCtrlUsername" ngDefaultControl></app-shared-input>
+                <app-shared-input input-label="Contraseña" input-type="password" formControlName="frmCtrlPassword"
+                    name="frmCtrlPassword" ngDefaultControl></app-shared-input>
+                <app-shared-button-raise-extended button-color="warn" button-icon="login" button-label="Ingresar"
+                    (clickResponse)="fnLogin()"></app-shared-button-raise-extended>
+            </form>
+
+            <div *ngIf="loginFormControl['frmCtrlUsername'].invalid && (loginFormControl['frmCtrlUsername'].dirty || loginFormControl['frmCtrlUsername'].touched)"
+                class="fmrErrorMessage">
+                <div *ngIf="loginFormControl['frmCtrlUsername'].errors?.['required']">
+                    <app-shared-label-error label-error-message="El nombre de usuario es requerido.">
+                    </app-shared-label-error>
+                </div>
+                <div *ngIf="loginFormControl['frmCtrlUsername'].errors?.['email']">
+                    <app-shared-label-error label-error-message="El nombre de usuario no tiene el formato adecuado.">
+                    </app-shared-label-error>
+                </div>
+            </div>
+
+            <div *ngIf="loginFormControl['frmCtrlPassword'].invalid && (loginFormControl['frmCtrlPassword'].dirty || loginFormControl['frmCtrlPassword'].touched)"
+                class="fmrErrorMessage">
+                <span *ngIf="loginFormControl['frmCtrlPassword'].errors?.['required']">
+                    <app-shared-label-error label-error-message="La contraseña es requerida.">
+                    </app-shared-label-error>
+                </span>
+                <span *ngIf="loginFormControl['frmCtrlPassword'].errors?.['minlength']">
+                    <app-shared-label-error label-error-message="La contraseña debe de tener al menos 8 carácteres.">
+                    </app-shared-label-error>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

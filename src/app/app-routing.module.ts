@@ -1,23 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {
-  LoginComponent,
-  RestaurantComponent,
-  ReportsComponent,
-  ExpensesComponent,
-  ProductsComponent,
-  ClientsComponent,
-  ProvidersComponent,
-  ConfigurationComponent,
-  SalesComponent,
-} from './dashboard/pages';
-
-
 const routes: Routes = [
   { 
     path: 'public',
-    loadChildren: () => import('./public/public.module').then( m => m.PublicModule )
+    loadChildren: () => import('./system-public/public.module').then( m => m.PublicModule )
+  },
+  { 
+    path: 'system-restaurant',
+    loadChildren: () => import('./system-restaurant/system-restaurant.module').then( m => m.SystemRestaurantModule )
   },
   {
     path: '**',
