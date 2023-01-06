@@ -10,6 +10,7 @@ import { HTTP_INTERCEPTORS } from "@angular/common/http";
  * @description: Import Third Party Libraries
  */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from "ngx-toastr";
 
 /**
  * @description: Import internal modules of the app
@@ -26,6 +27,7 @@ import { ServerErrorInterceptorService } from "./core/services/interceptors/serv
  * @description: Import Components
  */
 import { AppComponent } from './app.component';
+import { ServerHeaderInterceptorService } from './core/services/interceptors/server-header-interceptor.service';
 
 
 @NgModule({
@@ -35,12 +37,26 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     CoreModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      positionClass: "toast-bottom-right",
+      enableHtml: true, 
+      preventDuplicates: true,
+      closeButton: true
+    }),
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: ServerErrorInterceptorService,
-    multi:true
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ServerErrorInterceptorService,
+      multi:true
+    }, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ServerHeaderInterceptorService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

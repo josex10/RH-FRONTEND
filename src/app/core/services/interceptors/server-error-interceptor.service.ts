@@ -22,7 +22,7 @@ export class ServerErrorInterceptorService implements HttpInterceptor {
           }
         },
         (err: HttpErrorResponse) => {
-          console.error(err);
+          this.error.handleError(err);
         }
       );
     });

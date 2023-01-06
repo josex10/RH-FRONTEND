@@ -23,11 +23,13 @@ export class AuthService {
     localStorage.setItem(this.envTokenKey,token);
   }
 
-  getToken(token: string) {
-    localStorage.getItem(this.envTokenKey);
+  getToken(): string {
+    let token = localStorage.getItem(this.envTokenKey);
+    if(!token){token = ''}
+    return token;
   }
 
-  removeToken(token: string) {
+  removeToken() {
     localStorage.removeItem(this.envTokenKey);
   }
 

@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   API_URL: "http://localhost:3000",
   GLOBALVARIABLE:"THIS IS A TEST VARIABLE ON DEVELOPMENT",
-  LSTOKENKEY:"Restaurant-Helper-Token"
+  LSTOKENKEY:"Restaurant-Helper-Token",
+  LSLANGUAGEKEY:"Restaurant-Helper-Language"
 };
 
 /*

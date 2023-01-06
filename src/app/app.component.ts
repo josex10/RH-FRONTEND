@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LanguageService } from './core/services/language/language.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'RH_FRONTEND';
+  title = 'R-Helper';
+
+  constructor(private languageService: LanguageService ){
+    this.languageService.setDefaultLanguage();
+  }
 }

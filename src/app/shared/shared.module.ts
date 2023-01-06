@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms'; 
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,7 +13,6 @@ import { SharedInputComponent } from './components/shared-input/shared-input.com
 import { SharedNavBarComponent } from './components/shared-nav-bar/shared-nav-bar.component';
 import { SharedButtonRaiseExtendedComponent } from './components/shared-button-raise-extended/shared-button-raise-extended.component';
 import { SharedLabelErrorComponent } from './components/shared-label-error/shared-label-error.component';
-
 
 @NgModule({
   declarations: [
