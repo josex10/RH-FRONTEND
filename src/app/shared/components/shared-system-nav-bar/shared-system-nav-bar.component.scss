@@ -1,0 +1,41 @@
+mat-toolbar {
+    background-color: #4E53C7;
+    font-size: 1.8vh;
+}
+
+.rh-navbar-logo {
+    height: 60%;
+    margin-right: 1vw;
+}
+
+.rh-navbar-right-section {
+    flex: 1 1 auto;
+}
+
+.rh-header-options {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.hr-navbar-button {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0 20px 0 20px;
+}
+
+
+
+.mat-icon {
+    margin-right: 5px;
+    vertical-align: text-bottom;
+}
+
+.rh-header-options:hover {
+    color: #ffffff;
+    background-color: #F34C40;
+}
+
+.rh-navbar-button-row app-shared-button-raise-extended {
+    margin-right: 8px;
+}

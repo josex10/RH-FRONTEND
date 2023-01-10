@@ -13,13 +13,15 @@ import { SharedInputComponent } from './components/shared-input/shared-input.com
 import { SharedNavBarComponent } from './components/shared-nav-bar/shared-nav-bar.component';
 import { SharedButtonRaiseExtendedComponent } from './components/shared-button-raise-extended/shared-button-raise-extended.component';
 import { SharedLabelErrorComponent } from './components/shared-label-error/shared-label-error.component';
+import { SharedSystemNavBarComponent } from './components/shared-system-nav-bar/shared-system-nav-bar.component';
 
 @NgModule({
   declarations: [
     SharedInputComponent,
     SharedNavBarComponent,
     SharedButtonRaiseExtendedComponent,
-    SharedLabelErrorComponent
+    SharedLabelErrorComponent,
+    SharedSystemNavBarComponent
   ],
   imports: [
     CommonModule, 
@@ -35,7 +37,8 @@ import { SharedLabelErrorComponent } from './components/shared-label-error/share
     SharedInputComponent,
     SharedNavBarComponent,
     SharedButtonRaiseExtendedComponent, 
-    SharedLabelErrorComponent
+    SharedLabelErrorComponent,
+    SharedSystemNavBarComponent
   ]
 })
 export class SharedModule { }

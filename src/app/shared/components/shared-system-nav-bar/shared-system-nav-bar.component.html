@@ -1,0 +1,40 @@
+<mat-toolbar>
+    <img src="../../../../assets/Logo_WHITE.png" alt="Restaurant - Helper" class="rh-navbar-logo">
+
+    <div class="rh-header-options">
+        <a [routerLink]="['users']" class="hr-navbar-button">
+            <mat-icon>person</mat-icon>
+            <span>Usuarios</span>
+        </a>
+    </div>
+    <span class="rh-header-options">
+        <a [routerLink]="['clients']" class="hr-navbar-button">
+            <mat-icon>emoji_people</mat-icon>
+            <span>Clientes</span>
+        </a>
+    </span>
+    <span class="rh-header-options">
+        <a [routerLink]="['providers']" class="hr-navbar-button">
+            <mat-icon>local_shipping</mat-icon>
+            <span>Proveedores</span>
+        </a>
+    </span>
+    <span class="rh-header-options">
+        <a [routerLink]="['ingredients']" class="hr-navbar-button">
+            <mat-icon>microwave_gen</mat-icon>
+            <span>Ingredientes</span>
+        </a>
+    </span>
+    <span class="rh-header-options">
+        <a [routerLink]="['products']" class="hr-navbar-button">
+            <mat-icon>dinner_dining</mat-icon>
+            <span>Productos</span>
+        </a>
+    </span>
+    <span class="rh-navbar-right-section"></span>
+    <div class="rh-navbar-button-row">
+        <app-shared-button-raise-extended button-color="warn" button-icon="app_registration" button-label="Registro"
+            (clickResponse)="fnChangeRoute('register')"></app-shared-button-raise-extended>
+    </div>
+
+</mat-toolbar>

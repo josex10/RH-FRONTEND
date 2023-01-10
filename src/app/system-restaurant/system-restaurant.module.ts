@@ -4,6 +4,8 @@ import { SystemRestaurantComponent } from './system-restaurant.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { UserModule } from './users/users.modules';
 import { SystemRestaurantRoutingModule } from './system-restaurant-routing.module';
+import { SharedModule } from '../shared/shared.module';
+import { ProvidersModule } from './providers/providers.module';
 
 
 
@@ -16,7 +18,8 @@ import { SystemRestaurantRoutingModule } from './system-restaurant-routing.modul
     SystemRestaurantRoutingModule,
     DashboardModule, 
     UserModule, 
-    
+    SharedModule,
+    ProvidersModule
   ]
 })
 export class SystemRestaurantModule { }
