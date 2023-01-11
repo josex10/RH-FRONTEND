@@ -2,9 +2,11 @@
 /**
  * @description: Import angular modules
  */
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from "@angular/common/http";
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 /**
  * @description: Import Third Party Libraries
@@ -28,6 +30,11 @@ import { ServerErrorInterceptorService } from "./core/services/interceptors/serv
  */
 import { AppComponent } from './app.component';
 import { ServerHeaderInterceptorService } from './core/services/interceptors/server-header-interceptor.service';
+import { ROOT_REDUCERS } from './core/state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './core/state/effects/Auth/auth.effects';
+
+
 
 
 @NgModule({
@@ -44,6 +51,9 @@ import { ServerHeaderInterceptorService } from './core/services/interceptors/ser
       preventDuplicates: true,
       closeButton: true
     }),
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([AuthEffects]),
   ],
   providers: [
     {

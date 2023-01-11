@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { selectAuthLoginUserInformation } from 'src/app/core/state/selectors/Auth/auth.selector';
+import { ISystemUser } from 'src/app/shared/interfaces/ISystem-user/ISystem-user';
 
 @Component({
   selector: 'app-users',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  loading$ = new Observable<boolean>;
+  systemUserInformation$ = new Observable<ISystemUser | undefined>;
+
+  constructor(private store: Store<any>) {
+
+  }
 
   ngOnInit(): void {
+    this.systemUserInformation$ = this.store.select(selectAuthLoginUserInformation);
   }
 
 }
