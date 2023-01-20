@@ -1,0 +1,72 @@
+<div class="box-container">
+    <div class="sidebar-box" id="top-box">
+        <img src="../../assets/hr_black_normal_2.png" class="sidebar-drawer-logo" alt="">
+        <hr class="sidebar_drawer_hr">
+        <div class="sidebar-item">
+            <a [routerLink]="['restaurant', {outlets:{'secondOutlet':['providers']}}]" routerLinkActive="selectedLink"
+                matTooltip="Restaurante" matTooltipPosition="right">
+                <mat-icon fontIcon="restaurant"></mat-icon>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a [routerLink]="['products']" routerLinkActive="selectedLink" matTooltip="Productos"
+                matTooltipPosition="right">
+                <mat-icon fontIcon="fastfood"></mat-icon>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a [routerLink]="['inventory']" routerLinkActive="selectedLink" matTooltip="Inventario"
+                matTooltipPosition="right">
+                <mat-icon fontIcon="inventory"></mat-icon>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a [routerLink]="['clients']" routerLinkActive="selectedLink" matTooltip="Clientes"
+                matTooltipPosition="right">
+                <mat-icon fontIcon="group"></mat-icon>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a [routerLink]="['reports']" routerLinkActive="selectedLink" matTooltip="Reportes"
+                matTooltipPosition="right">
+                <mat-icon fontIcon="analytics"></mat-icon>
+            </a>
+        </div>
+        <div class="sidebar-item">
+            <a [routerLink]="['administration']" routerLinkActive="selectedLink" matTooltip="Administración"
+                matTooltipPosition="right">
+                <mat-icon fontIcon="storefront"></mat-icon>
+            </a>
+        </div>
+
+        <div class="sidebar-item">
+            <a [routerLink]="['providers']" routerLinkActive="selectedLink" matTooltip="Proveedores"
+                matTooltipPosition="right">
+                <mat-icon fontIcon="local_shipping"></mat-icon>
+            </a>
+        </div>
+    </div>
+    <div class="divider" id="bottom-box">
+        <div class="sidebar-box">
+            <div class="sidebar-item">
+                <a [routerLink]="['profile']" routerLinkActive="selectedLink" matTooltip="Mi perfil"
+                    matTooltipPosition="right">
+                    <mat-icon fontIcon="account_circle"></mat-icon>
+                </a>
+            </div>
+            <div class="sidebar-item">
+                <a [routerLink]="['settings']" routerLinkActive="selectedLink" matTooltip="Configuraciones"
+                    matTooltipPosition="right">
+                    <mat-icon fontIcon="settings"></mat-icon>
+                </a>
+            </div>
+            <div class="sidebar-item">
+                <a (click)="fnLogout()" routerLinkActive="selectedLink" matTooltip="Cerrar Sesión"
+                    matTooltipPosition="right">
+                    <mat-icon fontIcon="logout"></mat-icon>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>

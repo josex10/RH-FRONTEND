@@ -1,0 +1,62 @@
+@import "../../../../styles.scss";
+
+.sidebar {
+    height: 100vh;
+    font-family: $font_poppins_100;
+}
+
+.sidebar-drawer-left {
+    width: 4vw;
+}
+
+#bottom-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.sidebar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar-item {
+    margin-bottom: 2vh;
+}
+
+.sidebar-item a {
+    align-self: center;
+    text-decoration: none;
+    color: #D9D9D9;
+}
+
+.sidebar-item a:hover {
+    color: #F36805;
+}
+
+.selectedLink {
+    color: black;
+}
+
+.sidebar-drawer-right {
+    width: 30vw;
+}
+
+.sidebar-drawer-logo {
+    height: 50%;
+    width: 60%;
+    display: block;
+    margin: auto;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+}
+
+.sidebar_drawer_hr {
+    margin-bottom: 5vh;
+    height: 0.1vh;
+    width: 80%;
+    background-color: #f7b783;
+    border: none;
+}

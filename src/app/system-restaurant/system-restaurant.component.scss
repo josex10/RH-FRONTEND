@@ -1,0 +1,24 @@
+@import "../../styles.scss";
+
+.drawer {
+    height: 100vh;
+    font-family: $font_poppins_100;
+}
+
+.sidebar-drawer-left {
+    width: 4vw;
+}
+
+.drawer-content {
+    background-color: $color_main_background;
+    padding: 1vw;
+}
+
+.header {
+    width: 64vw;
+    height: 8vh;
+}
+
+.content {
+    height: 84vh;
+}

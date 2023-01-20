@@ -16,11 +16,9 @@ export class HandleErrorService {
       // A client-side or network error occurred. Handle it accordingly.
       errorMessage = `An error occurred: ${err.error.message}`;
     } else {
-      console.log(err)
       // The backend returned an unsuccessful response code.
-      errorMessage = "Something went wrong!";
+      errorMessage = err.error.message;
     }
-    console.log(errorMessage)
     this.toastrs.error(errorMessage);
   }
 }

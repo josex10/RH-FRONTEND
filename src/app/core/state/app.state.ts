@@ -1,12 +1,21 @@
-import { ISystemUserState } from "src/app/shared/interfaces/ISystem-user/ISystem-user-state.interface";
 import { ActionReducerMap } from '@ngrx/store';
 import { IAuthLoginState } from "src/app/shared/interfaces/Auth/IAuth-login-state.interface";
 import { authReducer } from "./reducers/Auth/auth.reducers";
+import { TMasterState, TProvider, TSystemCompanyState } from "src/app/shared/types";
+import { providerListReducer } from "./reducers/providers/provider.reducers";
+import { masterStateListReducer } from "./reducers/master-state/master-state.reducers";
+import { systemCompanyReducer } from './reducers';
 
 export interface AppState {
-    authLoginState: IAuthLoginState
+    authLoginState: IAuthLoginState,
+    providerListState: TProvider[],
+    masterStateState: TMasterState[],
+    systemCompanyState: TSystemCompanyState
 }
 
 export const ROOT_REDUCERS: ActionReducerMap<AppState> = {
-        authLoginState: authReducer
+        authLoginState: authReducer,
+        providerListState: providerListReducer,
+        masterStateState: masterStateListReducer,
+        systemCompanyState: systemCompanyReducer
 }

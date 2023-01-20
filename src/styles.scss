@@ -11,3 +11,38 @@ body {
 }
 
 @import url('/node_modules/ngx-toastr/toastr.css');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
+/*COLORS */
+$color_main_background: #F8F8F8;
+$color_main_white: #ffffff;
+$color_main_orange: #F36801;
+$color_main_orange_secondary: #F7B783;
+$color_main_black: #1F2130;
+
+/*FONTS*/
+$font_poppins_100: 'Poppins', sans-serif;
+
+/*TEMPLATE FOR ROUTING AND NAVIGATION*/
+.restaurant_helper_template_main_container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.restaurant_helper_template_main_content {
+    width: 64vw;
+    // overflow: scroll;
+}
+
+.restaurant_helper_template_main_routing {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 30vw;
+    background-color: $color_main_white;
+}
+
+/*END TEMPLATE FOR ROUTING AND NAVIGATION*/

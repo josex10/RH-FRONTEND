@@ -15,7 +15,6 @@ const routes: Routes = [
     redirectTo: 'public'
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

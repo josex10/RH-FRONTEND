@@ -32,7 +32,8 @@ import { AppComponent } from './app.component';
 import { ServerHeaderInterceptorService } from './core/services/interceptors/server-header-interceptor.service';
 import { ROOT_REDUCERS } from './core/state/app.state';
 import { EffectsModule } from '@ngrx/effects';
-import { AuthEffects } from './core/state/effects/Auth/auth.effects';
+import { AuthEffects, ProviderEffects } from './core/state/effects';
+import { MasterStateEffects } from './core/state/effects/master-state/master-state.effects';
 
 
 
@@ -53,7 +54,7 @@ import { AuthEffects } from './core/state/effects/Auth/auth.effects';
     }),
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
-    EffectsModule.forRoot([AuthEffects]),
+    EffectsModule.forRoot([AuthEffects, ProviderEffects, MasterStateEffects])
   ],
   providers: [
     {

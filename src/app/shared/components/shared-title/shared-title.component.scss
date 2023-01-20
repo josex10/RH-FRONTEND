@@ -1,0 +1,15 @@
+@import "../../../../styles.scss";
+
+.title {
+    padding-top: 1vh;
+    background-color: $color_main_orange;
+    height: 4vh;
+    color: $color_main_white;
+    margin-bottom: 3vh;
+}
+
+mat-icon {
+    display: inline-flex;
+    vertical-align: top;
+    padding: 0 1vh 0 1vh;
+}

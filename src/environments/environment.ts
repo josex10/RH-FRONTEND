@@ -7,7 +7,9 @@ export const environment = {
   API_URL: "http://localhost:3000",
   GLOBALVARIABLE:"THIS IS A TEST VARIABLE ON DEVELOPMENT",
   LSTOKENKEY:"Restaurant-Helper-Token",
-  LSLANGUAGEKEY:"Restaurant-Helper-Language"
+  LSTOKENREFRESHKEY:"Restaurant-Helper-Refresh-Token",
+  LSLANGUAGEKEY:"Restaurant-Helper-Language",
+  LSISLOGIN:"Restaurant-Helper-isLogin"
 };
 
 /*

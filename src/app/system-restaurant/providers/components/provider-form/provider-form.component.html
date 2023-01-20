@@ -1,0 +1,24 @@
+<form [formGroup]="frmGroupProvider">
+    <app-shared-select [input-select-data]="systemStateSelectData" input-label="Provincia/Estado *"
+        formControlName="frmCtrlIdMasterState" name="frmCtrlIdMasterState" ngDefaultControl></app-shared-select>
+    <app-shared-input input-label="Nombre" formControlName="frmCtrlName" name="frmCtrlName"
+        ngDefaultControl></app-shared-input>
+    <app-shared-input input-label="Correo" formControlName="frmCtrlEmail" name="frmCtrlEmail"
+        ngDefaultControl></app-shared-input>
+    <app-shared-input input-label="Teléfono" formControlName="frmCtrlPhone" name="frmCtrlPhone"
+        ngDefaultControl></app-shared-input>
+    <app-shared-textarea input-label="Dirección" formControlName="frmCtrlAddress" name="frmCtrlAddress"
+        ngDefaultControl></app-shared-textarea>
+    <app-shared-input input-label="Num. Identificación" formControlName="frmCtrlTaxNumber" name="frmCtrlTaxNumber"
+        ngDefaultControl></app-shared-input>
+    <app-shared-textarea input-label="Descripción" formControlName="frmCtrlDescription" name="frmCtrlDescription"
+        ngDefaultControl></app-shared-textarea>
+
+
+    <app-shared-slide-toggle input-label="Activar" [input-value]="true"
+        (output-onchange)="sliderChange($event)"></app-shared-slide-toggle>
+
+    <app-shared-button-raise-extended button-color="warn" button-icon="login" button-label="Ingresar"
+        (clickResponse)="fnSaveChanges()"></app-shared-button-raise-extended>
+
+</form>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { authSystemUserLogoutAction } from '../core/state/actions/Auth/auth.actions';
 
 @Component({
   selector: 'app-system-restaurant',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SystemRestaurantComponent implements OnInit {
 
-  constructor() { }
+  constructor(private store: Store) { }
 
   ngOnInit(): void {
+  }
+
+  fnLogout = ()=>{
+    this.store.dispatch(authSystemUserLogoutAction());
   }
 
 }

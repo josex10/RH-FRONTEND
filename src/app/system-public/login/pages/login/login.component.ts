@@ -1,12 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/core/services/auth/auth.service';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AnyUserLoginAuth } from 'src/app/shared/interfaces/IAuth';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { authSystemUserLoginAction } from 'src/app/core/state/actions/Auth/auth.actions';
-import { ISystemUser } from 'src/app/shared/interfaces/ISystem-user/ISystem-user';
-import { selectAuthLoginUserInformation } from 'src/app/core/state/selectors/Auth/auth.selector';
 
 
 @Component({
@@ -14,43 +10,30 @@ import { selectAuthLoginUserInformation } from 'src/app/core/state/selectors/Aut
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent{
 
   private anyUserLoginAuth!: AnyUserLoginAuth;
 
-  public loginForm = new  UntypedFormGroup({
-    frmCtrlUsername: new UntypedFormControl("", [
+  public loginForm = new  FormGroup({
+    frmCtrlUsername: new FormControl("", [
       Validators.required,
       Validators.email
     ]),
-    frmCtrlPassword: new UntypedFormControl("", [
+    frmCtrlPassword: new FormControl("", [
       Validators.required,
       Validators.minLength(8)
     ])
   });
 
-  constructor(private authService: AuthService, private router: Router, private store: Store) { }
-
-  ngOnInit(): void {
-  }
+  constructor(private store: Store) { }
 
   fnLogin(){
     if(this.loginForm.valid){
       this.anyUserLoginAuth = {
-        clm_username: this.loginForm.get('frmCtrlUsername')?.value, 
-        clm_password: this.loginForm.get('frmCtrlPassword')?.value
+        clm_username: this.loginForm.get('frmCtrlUsername')?.value!, 
+        clm_password: this.loginForm.get('frmCtrlPassword')?.value!
       }
       this.store.dispatch(authSystemUserLoginAction({userLogingAuth:this.anyUserLoginAuth}));
-      /*
-      this.authService.systemUserLogin(this.anyUserLoginAuth).subscribe(res => {
-        const systemUser: ISystemUser = res.data.systemUser;
-        
-        this.authService.setToken(res.data.token);
-        this.router.navigate(["/system-restaurant"]);
-      });
-      */
-    } else {
-      console.log("inCorrect info");
     }
   }
 

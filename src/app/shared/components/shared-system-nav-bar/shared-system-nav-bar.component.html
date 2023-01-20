@@ -32,9 +32,18 @@
         </a>
     </span>
     <span class="rh-navbar-right-section"></span>
-    <div class="rh-navbar-button-row">
-        <app-shared-button-raise-extended button-color="warn" button-icon="app_registration" button-label="Registro"
-            (clickResponse)="fnChangeRoute('register')"></app-shared-button-raise-extended>
-    </div>
+    <button color="warn" [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <mat-icon>settings</mat-icon>
+            <span>Configuracion</span>
+        </button>
+        <button (click)="fnLogout()" mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesion</span>
+        </button>
+    </mat-menu>
 
 </mat-toolbar>

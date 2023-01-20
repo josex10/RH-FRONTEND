@@ -1,1 +1,13 @@
-<p>providers works!</p>
+<div class="restaurant_helper_template_main_container">
+    <div class="restaurant_helper_template_main_content">
+        <app-shared-title [title]="'Proveedores'" [title-icon]="'local_shipping'"></app-shared-title>
+        <div class="content">
+            <app-shared-table [tableData]="providerList$ | async" [tableColumns]="providersTableColumns"
+                (outputRowSelected)="selectedRow($event)">
+            </app-shared-table>
+        </div>
+    </div>
+    <div class="restaurant_helper_template_main_routing">
+        <router-outlet></router-outlet>
+    </div>
+</div>
