@@ -11,7 +11,7 @@ import { MatSlideToggleChange } from '@angular/material/slide-toggle';
 export class SharedSlideToggleComponent{
 
   @Input('input-label') input_label: string = 'Seleccione';
-  @Input('input-value') input_value: boolean = false;
+  @Input('input-value') input_value: boolean | null = false;
   @Input('input-disabled') input_disabled: boolean = false;
   @Output('output-onchange') output_onchange = new EventEmitter;
 

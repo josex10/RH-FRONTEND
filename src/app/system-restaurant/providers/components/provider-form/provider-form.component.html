@@ -1,23 +1,20 @@
 <form [formGroup]="frmGroupProvider">
-    <app-shared-select [input-select-data]="systemStateSelectData" input-label="Provincia/Estado *"
+    <app-shared-select [input-selected]="getFrmGroupProviderControls['frmCtrlIdMasterState'].value" [input-select-data]="systemStateSelectData" input-label="Provincia/Estado *"
         formControlName="frmCtrlIdMasterState" name="frmCtrlIdMasterState" ngDefaultControl></app-shared-select>
-    <app-shared-input input-label="Nombre" formControlName="frmCtrlName" name="frmCtrlName"
+    <app-shared-input input-label="Nombre" [input-value]="getFrmGroupProviderControls['frmCtrlName'].value" formControlName="frmCtrlName" name="frmCtrlName"
         ngDefaultControl></app-shared-input>
-    <app-shared-input input-label="Correo" formControlName="frmCtrlEmail" name="frmCtrlEmail"
+    <app-shared-input input-label="Correo" [input-value]="getFrmGroupProviderControls['frmCtrlEmail'].value" formControlName="frmCtrlEmail" name="frmCtrlEmail"
         ngDefaultControl></app-shared-input>
-    <app-shared-input input-label="Teléfono" formControlName="frmCtrlPhone" name="frmCtrlPhone"
+    <app-shared-input input-label="Teléfono" [input-value]="getFrmGroupProviderControls['frmCtrlPhone'].value" formControlName="frmCtrlPhone" name="frmCtrlPhone"
         ngDefaultControl></app-shared-input>
-    <app-shared-textarea input-label="Dirección" formControlName="frmCtrlAddress" name="frmCtrlAddress"
+    <app-shared-textarea input-label="Dirección"  [input-value]="getFrmGroupProviderControls['frmCtrlAddress'].value"formControlName="frmCtrlAddress" name="frmCtrlAddress"
         ngDefaultControl></app-shared-textarea>
-    <app-shared-input input-label="Num. Identificación" formControlName="frmCtrlTaxNumber" name="frmCtrlTaxNumber"
+    <app-shared-input input-label="Num. Identificación" [input-value]="getFrmGroupProviderControls['frmCtrlTaxNumber'].value" formControlName="frmCtrlTaxNumber" name="frmCtrlTaxNumber"
         ngDefaultControl></app-shared-input>
-    <app-shared-textarea input-label="Descripción" formControlName="frmCtrlDescription" name="frmCtrlDescription"
+    <app-shared-textarea input-label="Descripción"  [input-value]="getFrmGroupProviderControls['frmCtrlDescription'].value" formControlName="frmCtrlDescription" name="frmCtrlDescription"
         ngDefaultControl></app-shared-textarea>
-
-
-    <app-shared-slide-toggle input-label="Activar" [input-value]="true"
+    <app-shared-slide-toggle input-label="Activar" [input-value]="getFrmGroupProviderControls['frmCtrlIsActive'].value"
         (output-onchange)="sliderChange($event)"></app-shared-slide-toggle>
-
     <app-shared-button-raise-extended button-color="warn" button-icon="login" button-label="Ingresar"
         (clickResponse)="fnSaveChanges()"></app-shared-button-raise-extended>
 

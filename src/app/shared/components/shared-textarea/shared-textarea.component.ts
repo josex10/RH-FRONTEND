@@ -8,14 +8,12 @@ import { Component, Input } from '@angular/core';
 export class SharedTextareaComponent {
   @Input('input-label') input_label?: string;
   @Input('input-disabled') input_disabled: boolean = false;
-  @Input('input-value') input_value: string = '';
+  @Input('input-value') input_value: string | null = null;
 
   public onChange: Function = (value: string) =>{};
   public onTouched: Function = () =>{};
 
-  constructor() { 
-    this.input_value = "";
-  }
+  constructor() {}
 
   writeValue(value: string): void {
       this.input_value = value;

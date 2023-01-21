@@ -10,18 +10,17 @@ export class SharedInputComponent implements  ControlValueAccessor{
 
   @Input('input-label') input_label?: string;
   @Input('input-type') input_type: string = 'text';
+  @Input('input-value') input_value: string | null = null;
 
-  public inputValue: string;
+  // public inputValue: string;
   public onChange: Function = (value: string) =>{};
   public onTouched: Function = () =>{};
   public disabled: boolean = false;
 
-  constructor() { 
-    this.inputValue = "";
-  }
+  constructor() {}
 
   writeValue(value: string): void {
-      this.inputValue = value;
+      this.input_value = value;
   }
 
   registerOnChange(onChange: any): void {

@@ -79,7 +79,6 @@ export class ProvidersComponent implements OnInit {
   }
 
   selectedRow(row: any){
-    console.log(row)
     this.router.navigate([`/system-restaurant/v1/providers/edit/${row.clm_id}`]);
   }
 

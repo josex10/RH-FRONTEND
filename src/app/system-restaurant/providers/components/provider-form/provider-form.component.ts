@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { map, Observable } from 'rxjs';
 import { masterStateListAction } from 'src/app/core/state/actions';
 import { AppState } from 'src/app/core/state/app.state';
-import { masterStateListSelector, systemCompanyInformationSelector } from 'src/app/core/state/selectors';
+import { masterStateListSelector, providerListSelector, systemCompanyInformationSelector } from 'src/app/core/state/selectors';
 import { EGeneralFormAction } from 'src/app/shared/enums';
 import { TProvider, TSharedSelect } from 'src/app/shared/types';
 
@@ -15,7 +14,7 @@ import { TProvider, TSharedSelect } from 'src/app/shared/types';
 })
 export class ProviderFormComponent implements OnInit {
 
-  @Input('input-provider') inputProvider?: TProvider;
+  @Input('input-provider-id') inputProviderId?: string;
   @Input('input-frm-action') inputFrmAction: EGeneralFormAction = EGeneralFormAction.NEW;
 
   public title: string = 'Agregar un nuevo Provedor';
@@ -28,33 +27,20 @@ export class ProviderFormComponent implements OnInit {
     frmCtrlAddress: new FormControl("", [Validators.maxLength(120)]),
     frmCtrlTaxNumber: new FormControl("", [Validators.maxLength(25)]),
     frmCtrlDescription: new FormControl("", [Validators.maxLength(120)]),
-    frmCtrlIsActive: new FormControl("")
+    frmCtrlIsActive: new FormControl(false)
   });
 
   // systemCountryId$ = new Observable<number>;
-  systemCountryId?: number;
-  systemStateSelectData: TSharedSelect[] = [];
+  public systemCountryId?: number;
+  public systemStateSelectData: TSharedSelect[] = [];
+  public systemProvider?: TProvider;
 
   constructor(private store: Store<AppState>){}
 
   ngOnInit(): void {
-    //TODO: GET THE STATE DATE 
-    // this.systemCountryId$ = this.store.select(systemCompanyInformationSelector).pipe(map(company => company?.clm_id_master_country!));
-    this.store.select(systemCompanyInformationSelector).subscribe(systemCompany => {
-      this.systemCountryId = systemCompany?.clm_id_master_country;
-      if(this.systemCountryId){
-        this.store.dispatch(masterStateListAction({countryId:this.systemCountryId!}));
-      }
-    });
 
-    this.store.select(masterStateListSelector).subscribe(systemStateArr => {
-      this.systemStateSelectData = systemStateArr.map(data => {
-        return {id: data.clm_id, value: data.clm_name}
-      })
-    });
-
-    //TODO: CHECK IF THE FORM ACTION IS NEW O EDIT
-    //TODO: SET THE TPROVIDER DATA TO THE FORM
+    
+    
     
   }
 
@@ -71,6 +57,42 @@ export class ProviderFormComponent implements OnInit {
 
   sliderChange($event:any){
     console.log($event);
+  }
+
+  ngOnChanges(changes: any) {
+    this.store.select(systemCompanyInformationSelector).subscribe(systemCompany => {
+      this.systemCountryId = systemCompany?.clm_id_master_country;
+      if(this.systemCountryId){
+        this.store.dispatch(masterStateListAction({countryId:this.systemCountryId!}));
+      }
+    });
+
+    this.store.select(masterStateListSelector).subscribe(systemStateArr => {
+      this.systemStateSelectData = systemStateArr.map(data => {
+        return {id: data.clm_id, value: data.clm_name}
+      })
+    });
+
+    //TODO: CHECK IF THE FORM ACTION IS NEW O EDIT
+    if(this.inputFrmAction === EGeneralFormAction.EDIT){
+      this.store.select(providerListSelector).subscribe(systemProviders => {
+        systemProviders.forEach(provider => {
+          
+          if(provider.clm_id === Number(this.inputProviderId)){
+            this.frmGroupProvider.patchValue({
+              frmCtrlIdMasterState: String(provider.clm_id_master_state),
+              frmCtrlName: provider.clm_name,
+              frmCtrlEmail: provider.clm_email,
+              frmCtrlPhone: provider.clm_phone,
+              frmCtrlAddress: provider.clm_address,
+              frmCtrlTaxNumber: provider.clm_tax_number,
+              frmCtrlDescription: provider.clm_description,
+              frmCtrlIsActive: provider.clm_is_active
+            });
+          }
+        })
+      });
+    }
   }
 
 }
