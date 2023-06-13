@@ -13,6 +13,8 @@ export class SharedSlideToggleComponent{
   @Input('input-label') input_label: string = 'Seleccione';
   @Input('input-value') input_value: boolean | null = false;
   @Input('input-disabled') input_disabled: boolean = false;
+  @Input('input-color') input_color: string = 'warn';
+  
   @Output('output-onchange') output_onchange = new EventEmitter;
 
   public onChange: Function = (value: string) =>{};

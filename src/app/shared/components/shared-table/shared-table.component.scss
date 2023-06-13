@@ -1,12 +1,13 @@
 @import '../../../../styles.scss';
 
 .table-header {
-    background-color: $color_main_black;
+    //background-color: $color_main_black;
     border-radius: 5vh;
 }
 
 .mat-mdc-header-cell {
-    color: $color_main_white;
+    color: black;
+    font-size: 1.8vh;
 }
 
 .mat-mdc-row .mat-mdc-cell {
@@ -16,12 +17,13 @@
 .mat-mdc-row:hover .mat-mdc-cell {
     // background-color: $color_main_orange_secondary;
     // color: $color_main_white;
-    font-weight: bold;
+    // font-weight: bold;
 }
 
 .selected .mat-mdc-cell {
-    //background-color: $color_main_orange_secondary;
-    font-weight: 5vh;
+    background-color: #F8F8F8;
+    // font-weight: 5vh;
     color: $color_main_black;
-    font-weight: bold;
+    // font-weight: bold;
+
 }

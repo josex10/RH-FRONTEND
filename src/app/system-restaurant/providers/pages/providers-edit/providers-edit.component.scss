@@ -1,4 +1,25 @@
-.providers-edit-header{
-    height: 10vh
-    bac;
+@import "../../../../../styles.scss";
+
+
+.rh-provider-container {
+    background-color: $color_main_black;
+    height: 100%;
+
+}
+
+.providers-edit-header {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    color: $color_main_white;
+    background-color: $color_main_orange;
+    padding: 0 2vw 0 2vw;
+}
+
+.providers-edit-header h1 {
+    margin: 0;
+}
+
+.rh-provider-form {
+    padding: 0 2vw 0 2vw;
 }

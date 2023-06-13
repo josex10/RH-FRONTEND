@@ -12,6 +12,7 @@ body {
 
 @import url('/node_modules/ngx-toastr/toastr.css');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400&display=swap');
 
 /*COLORS */
 $color_main_background: #F8F8F8;
@@ -46,3 +47,31 @@ $font_poppins_100: 'Poppins', sans-serif;
 }
 
 /*END TEMPLATE FOR ROUTING AND NAVIGATION*/
+
+
+/* INPUTS */
+.restaurant_helper_template_validator_message_error {
+    color: red;
+    font-size: 1.5vh;
+    font-style: bold;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+    height: 0;
+}
+
+.mdc-text-field--filled .mdc-line-ripple::after {
+    border-bottom-color: $color_main_orange !important;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+    border-bottom-color: $color_main_orange !important;
+}
+
+.mat-mdc-text-field-wrapper {
+    background-color: $color_main_white ! important;
+}
+
+.rh-mat-input {
+    margin-top: 2vh;
+}

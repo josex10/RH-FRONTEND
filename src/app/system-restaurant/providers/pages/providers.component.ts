@@ -26,7 +26,7 @@ export class ProvidersComponent implements OnInit {
       const providerFinalList = provider.map( tmpProvider => {
         return  {
           ...tmpProvider,
-          state_name: tmpProvider.state.clm_name,
+          state_name: tmpProvider.state?.clm_name,
         }
       })
       

@@ -9,3 +9,5 @@ export * from './general/maintenance-fields.type';
 export * from './general/identification-field.type';
 export * from './system-company/system-company.type';
 export * from './system-company/system-company-state';
+export * from './general/update-result.type';
+export * from './general/validation-message.type';

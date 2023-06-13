@@ -8,6 +8,7 @@ import { ProvidersRoutingModule } from './providers-routing.module';
 import { ComponentsModule } from '../components/components.module';
 import { ProviderFormComponent } from './components/provider-form/provider-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 
@@ -24,7 +25,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProvidersRoutingModule,
     ComponentsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CoreModule
   ]
 })
 export class ProvidersModule { }
